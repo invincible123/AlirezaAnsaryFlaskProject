@@ -1,0 +1,8 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+<div class="container">
+<div class="list-group-item" align="center"><p><h3>EDIT RESUME</h3><br><form action="/update/{{ROW[1]}}" method="post"><textarea name="body" dir="AUTO" placeholder=" TYPE HERE . . . ">{{ROW[0]}}</textarea><p><h5><input type="submit" value="GO" /></h5></p></form></p></div>    
+</div>
+
+{% endblock %}

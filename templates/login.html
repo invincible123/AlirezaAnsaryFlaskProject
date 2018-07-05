@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br><br>
+<div class="container">
+<div class="list-group-item" align="center">
+    <p>{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div align="center"><p><li style="color:tomato"><strong>{{ message }}</strong></li></p></div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="/signin" method="post">
+        <h3>LOGIN PAGE</h3><br>
+        USERNAME
+        <div><input type="text" name="un" /></div>
+        <br>
+        PASSWORD
+        <div><input type="password" name="pw" /></div>
+        <br>
+        <h5><input type="submit" value="GO" /></h5>
+    </form></p>
+</div>
+</div>
+
+{% endblock %}

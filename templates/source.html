@@ -1,0 +1,19 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div align="center">
+    <p>
+    <a href="/editSource">
+        <input type="submit" style="background-color:bisque" value="EDIT" />
+    </a>
+    </p>
+</div>
+
+<p>
+    <div class="container" dir="auto" style="text-align: justify">
+        <li class="list-group-item" style="background-color: rgb(240, 240, 240); line-height: 30px; word-wrap:break-word; white-space:pre-wrap; border-radius: 5px">
+            <div style="margin-right: 35px; margin-left: 35px">{{src_body}}</div>
+        </li>
+    </div>
+</p>
+
+{% endblock %}

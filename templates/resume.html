@@ -1,0 +1,37 @@
+{% extends 'layout.html' %} {% block body %}
+
+    <div class="container">
+    <p>
+        <h4 style="color: dimgrey; text-align: center" dir="auto">{{ROW[0]}}</h4>
+        <div dir="auto" style="text-align:justify">
+            <li class="list-group-item" style="line-height: 30px; word-wrap:break-word; white-space:pre-wrap; border-radius: 3px; background-color: rgb(240, 240, 240)">{{ROW[1]}}</li>
+        </div>
+        {% if MODE == true %}
+        <br>
+        <form action="/edit/{{ROW[2]}}" method="post" \ align="center">
+            <h5><input type="submit" value="EDIT" /></h5>
+        </form>
+        <form action="/delete/{{ROW[2]}}" method="post" align="center">
+            <h5><input type="submit" style="background-color:tomato" value="DELETE" /></h5>
+        </form>
+        {% endif %}
+    </p>
+    </div>
+
+<br>
+<div class="container" align='center'>
+        <p>
+            <h5 class="my-8">COMMENTS&ensp;&ensp;</h5>
+        </p>
+        <form action="/comment/{{ROW[2]}}" method="post">
+            <input type="text" name="c_body" placeholder=" TYPE HERE . . . " dir="auto" style="background-color: rgb(236, 236, 236)">
+        </form>
+        {% for thing in CMT %}
+        <p><div class="container"><li class="list-group-item" style="background-color: rgb(218, 218, 218)">
+            <div style="color: gray" dir="rtl">BY: {{thing[1]}}</div>
+            <h6 class="my-8" dir="rtl"> {{thing[0]}} </h6>
+        </li></div></p>
+         {% endfor %}
+    </div>
+
+{% endblock %}

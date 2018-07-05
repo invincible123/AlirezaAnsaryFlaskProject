@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Flask Project</title>
+    <style>
+        input[type=submit]{background-color:silver; border: none; border-radius: 40px; width: 150; height: 40px}
+        input[type=text]{width: 300px; height: 30px; border: none; border-radius: 1px; padding: 15px}
+        input[type=password]{width: 300px; height: 30px; border: none; border-radius: 1px; padding: 15px}
+        input::-webkit- {
+            font-size: 13px;
+            font-style: italic
+        }
+        textarea {
+            resize: none;
+            width: 75%;
+            height: 35ex;
+            padding: 1%;
+        }
+        .container{
+            width: 50%;
+        }
+        a:link {
+            color:currentColor;
+        }
+        a:hover {
+            text-decoration: none;
+            color:tomato;
+        }
+        a:visited {
+            color: currentColor;
+        }
+        .container2 
+        {
+            width:inherit;
+            height:90px;
+        }
+        .tempLeft
+        {
+            width:50%;
+            float:left;
+        }
+        .tempRight
+        {
+            width:50%;
+            float:right;
+        }
+        .list-group-item
+        {
+            background-color: gainsboro
+        }
+    </style>
+</head>
+
+<body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/">WebSite</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                        <a class="nav-link" href="/">HOME</a>
+                    </li>
+                {% if login == true %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/panel">PANEL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">LOG OUT</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">LOGIN</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    {% block body %}{% endblock %}
+
+</body>
+
+</html>

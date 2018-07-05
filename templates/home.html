@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+<div class="container" align='CENTER'>
+    <p><h5 class="my-8">RESUME&ensp;</h5></p>
+    {% if resume==[] %}
+    <li class="list-group-item" style="background-color: rgb(240, 240, 240)">No Resume Found</li>
+    <br>
+    {% else %}
+        {% for thing in resume %}
+        <a href='/resume/{{thing[2]}}'>
+            <li class="list-group-item" style="background-color:gainsboro">
+                <div>
+                    <h4 class="my-8"> {{thing[0]}} </h4>
+                    <div style="color: dimgray" dir="rtl">BY {{thing[2]}} AT {{thing[1]}}</div>
+                </div>
+            </li>
+        </a>
+        <br> {% endfor %}
+    {% endif %}
+    <p><h5 class="my-8">DOCUMENTS&ensp;</h5></p>
+    <a href='/source'>
+        <li class="list-group-item" style="background-color: gainsboro">
+                <h4 class="my-8"> SOURCE CODE </h4>
+                <div style="color:dimgray" dir="rtl">علیرضا انصاری</div>
+        </li>
+    </a>
+</div>
+
+{% endblock %}

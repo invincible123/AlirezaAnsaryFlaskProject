@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% block body %}
+<br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div align="center"><p><li style="color:tomato"><strong>{{ message }}</strong></li></p></div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container">
+{% if RESUME == false %}
+<div class="list-group-item" align="center"><p><h3>SUBMIT YOUR RESUME</h3><br><form action="/apply" method="post"><textarea name="body" dir="auto" placeholder=" TYPE HERE . . . "></textarea><p><h5><input type="submit" value="GO" /></h5></p></form></p></div>
+{% endif %}
+<br>
+<div class="list-group-item" align="center"><p><h3>CHANGE PASSWORD</h3><br><form action="/password" method="post">
+      Current Password
+      <div><input type="text" name="old" /></div><br>
+      New Password
+      <div><input type="text" name="new" /></div><br>
+      Confirm Password
+<div><input type="password" name="renew" /></div><br><h5><input type="submit" value="GO" /></h5></form></p>
+</div>
+</div>
+
+{% endblock %}
